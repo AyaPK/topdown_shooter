@@ -10,10 +10,10 @@
 script = ExtResource("1_vgakb")
 
 [node name="Player" parent="." instance=ExtResource("1_ohagy")]
-position = Vector2(523, 284)
+position = Vector2(116, 74)
 
 [node name="Crosshair" parent="." instance=ExtResource("2_rmjg0")]
 script = ExtResource("3_xk5cc")
 
 [node name="Enemy" parent="." groups=["enemies"] instance=ExtResource("5_ru7yn")]
-position = Vector2(323, 200)
+position = Vector2(985, 121)
