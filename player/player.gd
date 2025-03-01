@@ -19,3 +19,9 @@ func _physics_process(delta):
 
 	# Apply movement
 	move_and_slide()
+	
+	queue_redraw()
+
+func _draw():
+	if get_tree().debug_collisions_hint:
+		draw_line(Vector2.ZERO, to_local(get_global_mouse_position()), Color.RED, 2)
