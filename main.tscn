@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=4 uid="uid://w8c21dq3wtny"]
 
 [ext_resource type="PackedScene" uid="uid://qeelklsjyiux" path="res://player/player.tscn" id="1_ohagy"]
-[ext_resource type="Script" path="res://main.gd" id="1_vgakb"]
+[ext_resource type="Script" path="res://scripts/level.gd" id="1_vgakb"]
 [ext_resource type="PackedScene" uid="uid://3f1dirwchvkb" path="res://tilemaps/indoor_tilemap.tscn" id="2_k6h7u"]
 [ext_resource type="PackedScene" uid="uid://bd7i621at625" path="res://player/crosshair.tscn" id="2_rmjg0"]
 [ext_resource type="Script" path="res://player/crosshair.gd" id="3_xk5cc"]
@@ -26,3 +26,6 @@ script = ExtResource("3_xk5cc")
 
 [node name="Enemy" parent="." groups=["enemies"] instance=ExtResource("5_ru7yn")]
 position = Vector2(985, 121)
+
+[node name="Enemy2" parent="." groups=["enemies"] instance=ExtResource("5_ru7yn")]
+position = Vector2(704, 587)

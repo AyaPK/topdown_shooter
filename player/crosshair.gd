@@ -9,7 +9,7 @@ func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	z_index = 100
 
-func _process(delta):
+func _process(_delta):
 	global_position = get_global_mouse_position()
 	check_enemy_under_cursor()
 
