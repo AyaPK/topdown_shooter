@@ -1,0 +1,28 @@
+[gd_scene load_steps=7 format=4 uid="uid://bwsw400d2iwp0"]
+
+[ext_resource type="Script" path="res://scripts/level.gd" id="1_6i14v"]
+[ext_resource type="PackedScene" uid="uid://3f1dirwchvkb" path="res://tilemaps/indoor_tilemap.tscn" id="1_k3r2a"]
+[ext_resource type="PackedScene" uid="uid://qeelklsjyiux" path="res://player/player.tscn" id="2_7ok7l"]
+[ext_resource type="PackedScene" uid="uid://bd7i621at625" path="res://player/crosshair.tscn" id="3_4c1wi"]
+[ext_resource type="Script" path="res://player/crosshair.gd" id="4_x30fn"]
+[ext_resource type="PackedScene" uid="uid://ba1r1nnobfb2a" path="res://enemies/enemy.tscn" id="5_oiyoq"]
+
+[node name="Level1" type="Node2D"]
+script = ExtResource("1_6i14v")
+
+[node name="IndoorTilemap2" parent="." instance=ExtResource("1_k3r2a")]
+scale = Vector2(2, 2)
+tile_map_data = PackedByteArray("AAAAAAAAAwAOAAEAAAABAAAAAwAOAAEAAAACAAAAAwAOAAEAAAADAAAAAwAOAAEAAAAEAAAAAwAOAAEAAAAFAAAAAwAOAAEAAAAFAAEAAwAOAAEAAAAFAAIAAwAOAAEAAAAEAAIAAwAOAAEAAAADAAIAAwAOAAEAAAACAAIAAwAOAAEAAAACAAMAAwAOAAEAAAADAAMAAwAOAAEAAAABAAMAAwAOAAEAAAAAAAMAAwAOAAEAAAAAAAIAAwAOAAEAAAAAAAEAAwAOAAEAAAADAAQAAwAOAAEAAAACAAQAAwAOAAEAAAAEAAQAAwAOAAEAAAAFAAQAAwAOAAEAAAAGAAQAAwAOAAEAAAAHAAQAAwAOAAEAAAAHAAMAAwAOAAEAAAAHAAIAAwAOAAEAAAAHAAEAAwAOAAEAAAAHAAAAAwAOAAEAAAAIAAAAAwAOAAEAAAAIAAEAAwAOAAEAAAAIAAIAAwAOAAEAAAA=")
+
+[node name="IndoorTilemap" parent="." instance=ExtResource("1_k3r2a")]
+scale = Vector2(2, 2)
+tile_map_data = PackedByteArray("AAAAAAAAAwAAAAQAAAABAAAAAwACAAQAAAACAAAAAwACAAQAAAADAAAAAwACAAQAAAAEAAAAAwACAAQAAAAFAAAAAwABAAQAAAAFAAEAAwACAAUAAAAFAAIAAwABAAUAAAAEAAIAAwACAAQAAAADAAIAAwAFAAgAAAACAAIAAwAHAAQAAAADAAMAAwAFAAYAAAADAAQAAwAFAAkAAAACAAMAAwADAAcAAAACAAQAAwAHAAUAAAAEAAQAAwACAAQAAAAFAAQAAwACAAQAAAAGAAQAAwACAAQAAAAHAAQAAwABAAUAAAAHAAMAAwACAAUAAAAHAAIAAwACAAkAAAAHAAEAAwAEAAYAAAAHAAAAAwAHAAQAAAAIAAAAAwAIAAQAAAAIAAEAAwAFAAYAAAAIAAIAAwAIAAUAAAAAAAMAAwAAAAUAAAAAAAIAAwACAAUAAAAAAAEAAwACAAUAAAABAAMAAwACAAQAAAA=")
+
+[node name="Player" parent="." instance=ExtResource("2_7ok7l")]
+position = Vector2(116, 74)
+
+[node name="Crosshair" parent="." instance=ExtResource("3_4c1wi")]
+script = ExtResource("4_x30fn")
+
+[node name="Enemy" parent="." groups=["enemies"] instance=ExtResource("5_oiyoq")]
+position = Vector2(985, 121)
