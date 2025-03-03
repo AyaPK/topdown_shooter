@@ -1,8 +1,8 @@
 extends Node2D
 
-@export var speed: float = 3000.0
-@export var max_distance: float = 2000.0
-@export var color: Color = Color(1, 1, 0)
+@export var speed: float = 2000.0
+@export var max_distance: float = 1500.0
+@export var color: Color = Color(1, 0, 0)
 
 var start_position: Vector2
 var end_position: Vector2
@@ -12,7 +12,6 @@ var direction: Vector2
 
 func _ready():
 	start_position = global_position
-	direction = (get_global_mouse_position() - start_position).normalized()
 	end_position = start_position + direction * max_distance
 	
 	var space_state = get_world_2d().direct_space_state
@@ -25,8 +24,8 @@ func _ready():
 	if result:
 		hit_something = true
 		hit_position = result.position
-		if result.collider.is_in_group("enemies"):
-			result.collider.queue_free()
+		if result.collider.is_in_group("player"):
+			print("Player hit!")
 	else:
 		hit_position = end_position
 

@@ -6,17 +6,21 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hll5x"]
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["player"]]
 collision_mask = 16
 script = ExtResource("1_oa4en")
 bullet_scene = ExtResource("2_64fc6")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(11, 0)
+position = Vector2(10, -9)
 texture = ExtResource("2_qqh3t")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, -8)
 shape = SubResource("CircleShape2D_hll5x")
 
 [node name="gunpoint" type="Node2D" parent="."]
-position = Vector2(39, 10)
+position = Vector2(38, 1)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(1.25, 1.25)

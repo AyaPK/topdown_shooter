@@ -21,15 +21,13 @@ func check_enemy_under_cursor():
 	if not space_state:
 		return
 	
-	# Use `intersect_point()` to check if the cursor is over an enemy
 	var query = PhysicsPointQueryParameters2D.new()
 	query.position = global_position
-	query.collide_with_areas = true  # If enemies use Area2D, this is needed
-	query.collide_with_bodies = true  # If enemies use CharacterBody2D or RigidBody2D
+	query.collide_with_areas = true
+	query.collide_with_bodies = true
 	
 	var results = space_state.intersect_point(query)
 
-	# Check if any of the detected objects are enemies
 	var hovering_enemy = false
 	for result in results:
 		if result.collider.is_in_group("enemies"):
