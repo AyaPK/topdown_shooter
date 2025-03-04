@@ -27,6 +27,7 @@ func _ready():
 		hit_position = result.position
 		if result.collider.is_in_group("enemies"):
 			result.collider.queue_free()
+			AudioManager.robot_dead.play()
 	else:
 		hit_position = end_position
 

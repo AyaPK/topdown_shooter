@@ -24,3 +24,7 @@ position = Vector2(38, 1)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(1.25, 1.25)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.4
+autostart = true
