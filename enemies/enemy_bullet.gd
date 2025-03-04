@@ -26,6 +26,7 @@ func _ready():
 		hit_position = result.position
 		if result.collider.is_in_group("player"):
 			print("Player hit!")
+			PlayerTracker.get_hit()
 	else:
 		hit_position = end_position
 

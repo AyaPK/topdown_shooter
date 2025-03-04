@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://br844sum7rgu4"]
+
+[ext_resource type="Script" path="res://globals/hud.gd" id="1_ikcql"]
+
+[node name="Hud" type="CanvasLayer"]
+script = ExtResource("1_ikcql")
+
+[node name="hp" type="Label" parent="."]
+offset_left = 102.0
+offset_top = 3.0
+offset_right = 426.0
+offset_bottom = 114.0
+theme_override_font_sizes/font_size = 50
+text = "10"
+
+[node name="hp_text" type="Label" parent="."]
+offset_left = 9.0
+offset_top = 2.0
+offset_right = 104.0
+offset_bottom = 71.0
+theme_override_font_sizes/font_size = 50
+text = "HP:"

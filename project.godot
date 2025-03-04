@@ -18,6 +18,8 @@ config/icon="res://icon.svg"
 [autoload]
 
 LevelTracker="*res://globals/global_level_tracker.gd"
+PlayerTracker="*res://globals/global_player_tracker.gd"
+Hud="*res://globals/HUD.tscn"
 
 [global_group]
 
