@@ -1,10 +1,10 @@
 [gd_scene load_steps=8 format=4 uid="uid://6blyu5sfbr75"]
 
 [ext_resource type="PackedScene" uid="uid://3f1dirwchvkb" path="res://tilemaps/indoor_tilemap.tscn" id="1_1hyk0"]
-[ext_resource type="Script" path="res://scripts/level.gd" id="1_iksg6"]
+[ext_resource type="Script" uid="uid://xv5j7yj2mub2" path="res://scripts/level.gd" id="1_iksg6"]
 [ext_resource type="PackedScene" uid="uid://qeelklsjyiux" path="res://player/player.tscn" id="2_meta6"]
 [ext_resource type="PackedScene" uid="uid://bd7i621at625" path="res://player/crosshair.tscn" id="3_kw5ev"]
-[ext_resource type="Script" path="res://player/crosshair.gd" id="4_mtj7f"]
+[ext_resource type="Script" uid="uid://dix1n7275xth1" path="res://player/crosshair.gd" id="4_mtj7f"]
 [ext_resource type="PackedScene" uid="uid://ba1r1nnobfb2a" path="res://enemies/enemy.tscn" id="5_jgr6s"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_qx75y"]
