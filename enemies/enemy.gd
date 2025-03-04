@@ -1,10 +1,12 @@
 extends CharacterBody2D
 
-@export var vision_angle: float = 45.0 
+@export var vision_angle: float = 45.0
 @export var vision_range: float = 500.0
 @export var bullet_scene: PackedScene
 @export var shoot_cooldown: float = 1.0
 @export var reaction_time: float = 1.0
+@export var move_speed: float = 100.0
+@export var min_chase_distance: float = 300.0
 
 @onready var gunpoint: Node2D = $Gunpoint
 
@@ -21,8 +23,14 @@ func _ready():
 func _physics_process(delta):
 	if player:
 		var direction_to_player = player.global_position - global_position
+		var distance_to_player = direction_to_player.length()
 		
-		if direction_to_player.length() <= vision_range:
+		if distance_to_player > min_chase_distance:
+			var move_direction = direction_to_player.normalized()
+			velocity = move_direction * move_speed
+			move_and_slide()
+
+		if distance_to_player <= vision_range:
 			look_at(player.global_position)
 			
 			var angle_to_player = rad_to_deg(global_position.angle_to_point(player.global_position))

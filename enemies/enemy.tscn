@@ -2,12 +2,13 @@
 
 [ext_resource type="Texture2D" uid="uid://bnsltw1sv042s" path="res://art/characters/enemy.png" id="1_i2183"]
 [ext_resource type="Script" path="res://enemies/enemy.gd" id="1_vgakb"]
-[ext_resource type="PackedScene" path="res://enemies/enemy_bullet.tscn" id="2_bullet"]
+[ext_resource type="PackedScene" uid="uid://dv8qes13d0xx4" path="res://enemies/enemy_bullet.tscn" id="2_bullet"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_811jk"]
 size = Vector2(33, 43)
 
 [node name="Enemy" type="CharacterBody2D"]
+collision_mask = 17
 script = ExtResource("1_vgakb")
 bullet_scene = ExtResource("2_bullet")
 
