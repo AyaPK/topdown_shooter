@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://w8c21dq3wtny"]
+[gd_scene load_steps=8 format=4 uid="uid://w8c21dq3wtny"]
 
 [ext_resource type="PackedScene" uid="uid://qeelklsjyiux" path="res://player/player.tscn" id="1_ohagy"]
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_vgakb"]
@@ -6,6 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://bd7i621at625" path="res://player/crosshair.tscn" id="2_rmjg0"]
 [ext_resource type="Script" path="res://player/crosshair.gd" id="3_xk5cc"]
 [ext_resource type="PackedScene" uid="uid://ba1r1nnobfb2a" path="res://enemies/enemy.tscn" id="5_ru7yn"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_khif4"]
+vertices = PackedVector2Array(630, 138, 630, 246, 246, 246, 138, 138, 138, 374, 246, 374, 1162, 394, 1169.87, -31.9375, 1161.12, 678.758, 1162, -10, -20.2031, -26.0391, 886, -10, 1034, 394, 1034, 650, -34.7813, 651.219, 246, 650, 886, 502, 522, 502, 522, 394, 778, 394, 778, -10, -10, -10, -10, 522, 246, 522, 726, 42, 726, 342, 682, 298, 682, 86, 470, 342, 298, 298, 42, 42, 86, 86, 42, 470, 86, 426, 298, 470, 298, 426, 470, 554, 298, 598, 982, 598, 938, 554, 982, 342, 938, 42, 1110, 42, 1110, 342)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 3, 2, 5), PackedInt32Array(6, 7, 8), PackedInt32Array(7, 6, 9), PackedInt32Array(10, 7, 9, 11), PackedInt32Array(12, 6, 8, 13), PackedInt32Array(13, 8, 14, 15), PackedInt32Array(16, 17, 18, 19), PackedInt32Array(11, 16, 19, 20), PackedInt32Array(10, 11, 20), PackedInt32Array(10, 20, 21), PackedInt32Array(14, 10, 21, 22), PackedInt32Array(15, 14, 22, 23), PackedInt32Array(24, 25, 26, 27), PackedInt32Array(26, 25, 28, 29), PackedInt32Array(30, 24, 27, 31), PackedInt32Array(32, 30, 31, 33), PackedInt32Array(34, 32, 33, 35), PackedInt32Array(35, 29, 28, 36), PackedInt32Array(34, 35, 36), PackedInt32Array(37, 34, 36), PackedInt32Array(38, 37, 36, 39), PackedInt32Array(40, 38, 39, 41), PackedInt32Array(40, 41, 42, 43)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-30, -36, 1180, -42, 1171, 689, -45, 661)])
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_vgakb")
@@ -17,6 +22,9 @@ tile_map_data = PackedByteArray("AAAAAAAAAwAOAAEAAAABAAAAAwAOAAEAAAACAAAAAwAOAAE
 [node name="IndoorTilemap" parent="." instance=ExtResource("2_k6h7u")]
 scale = Vector2(2, 2)
 tile_map_data = PackedByteArray("AAAAAAAAAwAAAAQAAAABAAAAAwACAAQAAAACAAAAAwACAAQAAAADAAAAAwACAAQAAAAEAAAAAwACAAQAAAAFAAAAAwABAAQAAAAFAAEAAwACAAUAAAAFAAIAAwABAAUAAAAEAAIAAwACAAQAAAADAAIAAwAFAAgAAAACAAIAAwAHAAQAAAADAAMAAwAFAAYAAAADAAQAAwAFAAkAAAACAAMAAwADAAcAAAACAAQAAwAHAAUAAAAEAAQAAwACAAQAAAAFAAQAAwACAAQAAAAGAAQAAwACAAQAAAAHAAQAAwABAAUAAAAHAAMAAwACAAUAAAAHAAIAAwACAAkAAAAHAAEAAwAEAAYAAAAHAAAAAwAHAAQAAAAIAAAAAwAIAAQAAAAIAAEAAwAFAAYAAAAIAAIAAwAIAAUAAAAAAAMAAwAAAAUAAAAAAAIAAwACAAUAAAAAAAEAAwACAAUAAAABAAMAAwACAAQAAAA=")
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_khif4")
 
 [node name="Player" parent="." instance=ExtResource("1_ohagy")]
 position = Vector2(116, 74)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://clc2787tgquju"]
+[gd_scene load_steps=8 format=4 uid="uid://clc2787tgquju"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_tqx1l"]
 [ext_resource type="PackedScene" uid="uid://3f1dirwchvkb" path="res://tilemaps/indoor_tilemap.tscn" id="2_j6grj"]
@@ -7,14 +7,22 @@
 [ext_resource type="Script" path="res://player/crosshair.gd" id="5_phc5d"]
 [ext_resource type="PackedScene" uid="uid://ba1r1nnobfb2a" path="res://enemies/enemy.tscn" id="6_b2tdx"]
 
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_pgbkd"]
+vertices = PackedVector2Array(630, 138, 630, 246, 246, 246, 138, 138, 138, 374, 246, 374, 1179.89, -25.8906, 1173.09, 664.078, 1162, 650, 1162, -10, -21.8984, -13.1016, 886, -10, -15.0938, 674.898, 246, 650, 886, 266, 1014, 266, 1014, 374, 886, 374, 886, 502, 522, 502, 778, 394, 522, 394, 778, -10, -10, -10, -10, 522, 246, 522, 726, 42, 726, 342, 682, 298, 682, 86, 470, 342, 298, 298, 42, 42, 86, 86, 42, 470, 86, 426, 298, 470, 298, 426, 470, 554, 298, 598, 1110, 598, 938, 554, 938, 426, 1066, 426, 1110, 42, 1066, 214, 938, 42, 938, 214)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 3, 2, 5), PackedInt32Array(6, 7, 8, 9), PackedInt32Array(10, 6, 9, 11), PackedInt32Array(8, 7, 12, 13), PackedInt32Array(14, 15, 16, 17), PackedInt32Array(17, 18, 19, 20), PackedInt32Array(19, 21, 20), PackedInt32Array(17, 20, 22, 14), PackedInt32Array(11, 14, 22), PackedInt32Array(10, 11, 22), PackedInt32Array(10, 22, 23), PackedInt32Array(12, 10, 23, 24), PackedInt32Array(13, 12, 24, 25), PackedInt32Array(26, 27, 28, 29), PackedInt32Array(28, 27, 30, 31), PackedInt32Array(32, 26, 29, 33), PackedInt32Array(34, 32, 33, 35), PackedInt32Array(36, 34, 35, 37), PackedInt32Array(37, 31, 30, 38), PackedInt32Array(36, 37, 38), PackedInt32Array(39, 36, 38), PackedInt32Array(40, 39, 38, 41), PackedInt32Array(41, 42, 43, 40), PackedInt32Array(44, 40, 43, 45), PackedInt32Array(46, 44, 45, 47)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-32, -23, -25, 685, 1183, 674, 1190, -36)])
+
 [node name="Level10" type="Node2D"]
 script = ExtResource("1_tqx1l")
 
-[node name="IndoorTilemap2" parent="." instance=ExtResource("2_j6grj")]
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_pgbkd")
+
+[node name="IndoorTilemap2" parent="NavigationRegion2D" instance=ExtResource("2_j6grj")]
 scale = Vector2(2, 2)
 tile_map_data = PackedByteArray("AAAAAAAAAwAOAAEAAAABAAAAAwAOAAEAAAACAAAAAwAOAAEAAAADAAAAAwAOAAEAAAAEAAAAAwAOAAEAAAAFAAAAAwAOAAEAAAAFAAEAAwAOAAEAAAAFAAIAAwAOAAEAAAAEAAIAAwAOAAEAAAADAAIAAwAOAAEAAAACAAIAAwAOAAEAAAACAAMAAwAOAAEAAAADAAMAAwAOAAEAAAABAAMAAwAOAAEAAAAAAAMAAwAOAAEAAAAAAAIAAwAOAAEAAAAAAAEAAwAOAAEAAAADAAQAAwAOAAEAAAACAAQAAwAOAAEAAAAEAAQAAwAOAAEAAAAFAAQAAwAOAAEAAAAGAAQAAwAOAAEAAAAHAAQAAwAOAAEAAAAHAAMAAwAOAAEAAAAHAAEAAwAOAAEAAAAHAAAAAwAOAAEAAAAIAAAAAwAOAAEAAAAIAAEAAwAOAAEAAAAIAAIAAwAOAAEAAAAIAAMAAwAOAAEAAAAIAAQAAwAOAAEAAAA=")
 
-[node name="IndoorTilemap" parent="." instance=ExtResource("2_j6grj")]
+[node name="IndoorTilemap" parent="NavigationRegion2D" instance=ExtResource("2_j6grj")]
 scale = Vector2(2, 2)
 tile_map_data = PackedByteArray("AAAAAAAAAwAAAAQAAAABAAAAAwACAAQAAAACAAAAAwACAAQAAAADAAAAAwACAAQAAAAEAAAAAwACAAQAAAAFAAAAAwABAAQAAAAFAAEAAwACAAUAAAAFAAIAAwABAAUAAAAEAAIAAwACAAQAAAADAAIAAwAFAAgAAAACAAIAAwAHAAQAAAADAAMAAwAFAAYAAAADAAQAAwAFAAkAAAACAAMAAwADAAcAAAACAAQAAwAHAAUAAAAEAAQAAwACAAQAAAAFAAQAAwACAAQAAAAGAAQAAwACAAQAAAAHAAQAAwAEAAkAAAAHAAMAAwAHAAQAAAAHAAEAAwAHAAUAAAAHAAAAAwAHAAQAAAAIAAAAAwAIAAQAAAAIAAEAAwADAAkAAAAIAAIAAwACAAUAAAAAAAMAAwAAAAUAAAAAAAIAAwACAAUAAAAAAAEAAwACAAUAAAABAAMAAwACAAQAAAAIAAMAAwADAAgAAAAIAAQAAwAIAAUAAAA=")
 
