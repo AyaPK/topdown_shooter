@@ -59,6 +59,7 @@ func _physics_process(delta: float) -> void:
 
 func attempt_shoot():
 	if can_shoot:
+		AudioManager.laser.play()
 		var bullet = bullet_scene.instantiate()
 		bullet.global_position = gunpoint.global_position
 		bullet.direction = (player.global_position - global_position).normalized()

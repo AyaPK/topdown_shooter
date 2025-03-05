@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cn6w6wlgcmji4"]
+[gd_scene load_steps=6 format=3 uid="uid://cn6w6wlgcmji4"]
 
 [ext_resource type="Script" uid="uid://daaovpmq3hymb" path="res://globals/audio_manager.gd" id="1_lh4kj"]
 [ext_resource type="AudioStream" uid="uid://ccfynnbjs0slb" path="res://audio/9mm Single.wav" id="1_qjkux"]
 [ext_resource type="AudioStream" uid="uid://c2htrixf78j4p" path="res://audio/Footstep_Boot_Concrete-001.wav" id="3_jnuaw"]
 [ext_resource type="AudioStream" uid="uid://biq3l7cdfcutn" path="res://audio/GrapplingHook_Hook-001.wav" id="4_2pcsi"]
+[ext_resource type="AudioStream" uid="uid://2ee3goe5p1pg" path="res://audio/Retro_Game_Sounds_SFX_73.wav" id="5_4m8wf"]
 
 [node name="AudioManager" type="Node2D"]
 script = ExtResource("1_lh4kj")
@@ -16,3 +17,6 @@ stream = ExtResource("3_jnuaw")
 
 [node name="RobotDead" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_2pcsi")
+
+[node name="Laser" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_4m8wf")
