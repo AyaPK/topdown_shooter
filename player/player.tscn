@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://qeelklsjyiux"]
+[gd_scene load_steps=6 format=3 uid="uid://qeelklsjyiux"]
 
 [ext_resource type="Script" uid="uid://yh6siepg2my2" path="res://player/player.gd" id="1_oa4en"]
 [ext_resource type="PackedScene" uid="uid://dnfm13gktqxyh" path="res://player/bullet.tscn" id="2_64fc6"]
 [ext_resource type="Texture2D" uid="uid://bey62rkm4mp30" path="res://art/characters/player.png" id="2_qqh3t"]
+[ext_resource type="Texture2D" uid="uid://358tuh8fj846" path="res://art/lightmap.jpeg" id="4_yw30f"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hll5x"]
 
@@ -28,3 +29,11 @@ zoom = Vector2(1.25, 1.25)
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.4
 autostart = true
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+scale = Vector2(4, 4)
+shadow_enabled = true
+texture = ExtResource("4_yw30f")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0, 0, 0, 1)

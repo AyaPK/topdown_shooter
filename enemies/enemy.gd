@@ -4,7 +4,7 @@ extends CharacterBody2D
 @export var vision_range: float = 500.0
 @export var bullet_scene: PackedScene
 @export var shoot_cooldown: float = 1.0
-@export var reaction_time: float = 0.4
+@export var reaction_time: float = 0.6
 @export var move_speed: float = 100.0
 @export var min_chase_distance: float = 300.0
 
